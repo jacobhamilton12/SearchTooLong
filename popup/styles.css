@@ -1,0 +1,28 @@
+.boxed {
+    border: 1px solid green;
+    position: relative;
+    margin-left: 20px;
+    padding: 5px;
+    flex: 1 1 0px;
+}
+
+#query {
+    flex: 1 1 0px;
+}
+
+.container1 {
+    display: flex;
+    justify-content: center;
+}
+
+.btn.one {
+    color: black;
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.container {
+    margin-top: 5px;
+    display: flex;
+}
