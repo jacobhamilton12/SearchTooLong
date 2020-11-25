@@ -42,9 +42,12 @@ function makedic(arr) {
 
 function filterWords() {
     search = document.getElementById("query").value;
-    search = search.replace(/[^0-9a-zA-Z\s]/g, " ");
-    search = search.replace(/\s/g, " ");
     search = search.toLowerCase();
+    search = search.replace(/\s/g, " ");
+    search = search.replace(/[^0-9a-z']/g, " ");
+    search = search.replace(/\s'/, " ");
+    search = search.replace(/'\s/, " ");
+
     //search = search.replace(re, " ");
     search = search.replace("  ", " ");
     search = Array.from(new Set(search.split(" "))).join(" ");
