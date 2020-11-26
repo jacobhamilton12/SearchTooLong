@@ -54,17 +54,16 @@ function filterWords() {
     let arr = search.split(" ");
     let dic = makedic(arr);
     let wordFreqs = loadFile("freq.csv").split("\n");
-
     let index = 1;
     while (arr.length > 32) {
-        for (index; index < 10000; index++) {
+        for (index; index < 333335; index++) {
             if (wordFreqs[index].substr(0, wordFreqs[index].indexOf(",")) in dic) {
                 arr.splice(dic[wordFreqs[index].substr(0, wordFreqs[index].indexOf(","))], 1);
                 dic = makedic(arr);
                 break;
             }
         }
-        if (index == 10000) {
+        if (index == 333335) {
             arr.splice(arr.length - 1, 1);
         }
     }

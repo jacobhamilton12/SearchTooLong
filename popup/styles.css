@@ -4,10 +4,14 @@
     margin-left: 20px;
     padding: 5px;
     flex: 1 1 0px;
+    width: 300px;
+    overflow-x: hidden;
 }
 
 #query {
     flex: 1 1 0px;
+    width: 300px;
+    overflow-y: auto;
 }
 
 .container1 {
