@@ -53,14 +53,13 @@ function filterWords() {
     search = Array.from(new Set(search.split(" "))).join(" ");
     let arr = search.split(" ");
     let dic = makedic(arr);
-    let file = loadFile("freq.csv");
-    let wordFreqs = Papa.parse(file).data;
+    let wordFreqs = loadFile("freq.csv").split("\n");
 
-    let index = 0;
+    let index = 1;
     while (arr.length > 32) {
         for (index; index < 10000; index++) {
-            if (wordFreqs[index][0] in dic) {
-                arr.splice(dic[wordFreqs[index][0]], 1);
+            if (wordFreqs[index].substr(0, wordFreqs[index].indexOf(",")) in dic) {
+                arr.splice(dic[wordFreqs[index].substr(0, wordFreqs[index].indexOf(","))], 1);
                 dic = makedic(arr);
                 break;
             }
@@ -71,5 +70,5 @@ function filterWords() {
     }
     search = arr.join(" ");
     //search = search.replaceAll(/[^\s]{15,}[\s]*/g, m => `\"${m.trim()}\" `);
-    document.getElementById("result").innerHTML = search;
+    document.getElementById("result").textContent = search;
 }
